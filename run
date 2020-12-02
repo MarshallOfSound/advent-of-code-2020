@@ -19,12 +19,16 @@ global.loadInput = () => {
   throw new Error('Failed to find input file for current run');
 };
 
-String.prototype.lines = function() {
+String.prototype.lines = function () {
   return this.split('\n');
 };
 
-Array.prototype.toInts = function() {
-  return this.map(i => parseInt(i));
+Array.prototype.toInts = function () {
+  return this.map((i) => parseInt(i, 10));
+};
+
+String.prototype.int = function () {
+  return parseInt(this, 10);
 };
 
 require(path.resolve(__dirname, fileArg));
