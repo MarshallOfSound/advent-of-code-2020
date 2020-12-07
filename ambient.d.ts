@@ -6,6 +6,7 @@ declare namespace NodeJS {
 
 declare interface String {
   lines(): string[];
+  blocks(): string[][];
   int(): number;
 }
 
