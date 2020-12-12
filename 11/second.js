@@ -8,8 +8,6 @@ for (let r = 0; r < input.length; r++) {
   }
 }
 
-const cache = new Map();
-
 let changed = true;
 let x = 0;
 while (changed) {
@@ -27,12 +25,11 @@ while (changed) {
         for (const dC of [-1, 0, 1]) {
           if (!dR && !dC) continue;
           let target = '.';
-          let mult = cache.get([r, c, dR, dC].join('|')) || 1;
+          let mult = 1;
           while (target === '.') {
             target = (grid[r + dR * mult] || [])[c + dC * mult];
             mult++;
           }
-          cache.set([r, c, dR, dC].join('|'), mult - 1);
           adj.push(target);
         }
       }
