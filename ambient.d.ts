@@ -8,6 +8,7 @@ declare interface String {
   lines(): string[];
   blocks(): string[][];
   int(): number;
+  reverse(): string;
 }
 
 declare interface Array {
